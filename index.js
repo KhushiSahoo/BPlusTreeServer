@@ -14,6 +14,9 @@ app.use(bodyParser.json());
 const bPlusTree = new BPlusTree(3); // Adjust the order as needed
 
 // Express endpoint to insert a key-value pair into the B+ tree
+app.get('/', (req, res) => {
+  res.send('Welcome to bplus server');
+})
 app.post('/insert', async(req, res) => {
   const { key, value } = req.body;
 
