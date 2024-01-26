@@ -1,12 +1,16 @@
 import express from'express';
 import bodyParser from'body-parser';
 import  {BPlusTree}  from './bplus3.js';
-import dotenv from 'dotenv'
+import dotenv from 'dotenv';
+import cors from 'cors';
 dotenv.config();
 
 // Express setup
 const app = express();
 const port = process.env.PORT || 3000;
+
+app.use(cors);
+app.use(express.json()); 
 
 app.use(bodyParser.json());
 
